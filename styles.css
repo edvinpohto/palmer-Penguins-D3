@@ -1,0 +1,175 @@
+body {
+    background-color: #1f2335;
+    color: rgb(212, 212, 212);
+}
+
+header {
+    background-color: #252a3f;
+    background-image: url(./images/banner.png);
+    /* attribute image to: Dylan Shaw */
+    background-size: 100% 100%;
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    max-width: 1000px;
+    margin: auto;
+}
+
+header img {
+    width: 25vh;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#introContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    width: 100%;
+}
+
+#intro {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-justify: inter-character;
+    max-width: 70vw;
+}
+
+#intro h1 {
+    text-align: center;
+}
+
+#intro img {
+    max-width: 500px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#overview {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+}
+
+#histogramText {
+    padding: 20px;
+    height: 100%;
+    max-width: 485px;
+    opacity: 0.9;
+}
+
+#scatterSection {
+    padding: 10px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+}  
+
+#scatterText {
+    padding: 20px;
+    height: 530px;
+    max-width: 485px;
+    opacity: 0.9;
+}
+
+rect {
+    fill: #627D98;
+    stroke: whitesmoke;
+    stroke-width: 1px;
+}
+
+circle {
+    fill: whitesmoke;
+}
+
+#nav-tabContent {
+    color: whitesmoke;
+    padding: 5px;
+}
+
+#axiSelector {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+#scatterplot {
+    color: whitesmoke;
+}
+
+.tooltip {
+    position: absolute;
+    font-size: 12px;
+    width:  auto;
+    height: auto;
+    pointer-events: none;
+    background-color: white;
+    color: black;
+}
+
+#referencesContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+}
+
+th {
+    color: white;
+}
+
+#references {
+    margin-top: 10px;
+    font-size: small;
+    width: 70vw;
+}
+
+#references h5 {
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+footer {
+    color: whitesmoke;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+

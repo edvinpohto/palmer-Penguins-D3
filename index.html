@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguins</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="./images/penguin.ico">
+</head>
+
+<body>
+    <header class="shadow p-3 mb-2 text-white"> 
+        <img src="./images/logo.png" alt="penguins">
+    </header>
+    
+<div id="content">
+
+    <div id="introContainer">
+        <div id="intro">
+            <h1>Penguins of the Palmer Archipelago: How do Chinstrap, Adelie, and Gentoo penguins compare physically?</h1> 
+            <br>
+            <p>
+                Welcome to an exploration of three adorable species of penguins from the Palmer Archipelago in Antarctica! 
+                Based on data collected and made available by Dr. Kristen Gorman and the Palmer 
+                Station Long Term Ecological Research (LTER) Program, this website aims to provide an interactive 
+                visualisation of differences in size measurements and physical attributes of adult foraging Adélie, 
+                Chinstrap, and Gentoo penguins. 
+            </p>
+            <img src="./images/penguins_edited.png" alt="penguins">
+            <p>
+                The visualisations below explore and compare differences in physical attributes of the three penguin 
+                species, answering the question <i>How do Chinstrap, Adelie, and Gentoo penguins compare?</i> Attributes 
+                available include species, body mass (measured in grams), flipper length (measured in millimetres), 
+                beak length (measured in millimetres), and beak depth (measured in millimetres). 
+                In the original dataset, a penguin’s beak is discussed using its more scientific term <i>culmen</i>. 
+                But, for the purpose of this visualisation, we will use the more general term <i>beak</i> in 
+                graph axis and descriptions. It is however good to know, that the culmen refers to the upper ridge of 
+                a bird's beak. 
+                <br><br>
+                Information for this introduction has been compiled from the Kaggle and GitHub pages 
+                of the dataset. Please find references to these pages, the original dataset, and its contributors at 
+                the bottom of the page.
+
+            </p>
+        </div>
+    </div>
+
+    <div id="overview">
+        <div id="histogram">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Body Mass</button>
+                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Flipper Length</button>
+                  <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Beak Length</button>
+                  <button class="nav-link" id="nav-depth-tab" data-bs-toggle="tab" data-bs-target="#nav-depth" type="button" role="tab" aria-controls="nav-depth" aria-selected="false">Beak Depth</button>
+                </div>
+              </nav>
+
+              <div class="tab-content" id="nav-tabContent">
+                  <br>
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <label for="species">Choose species:</label>
+                        <select id="selectSpecies0" class="form-select-sm"></select> 
+                        <div id="histogram0"></div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <label for="species">Choose species:</label>
+                        <select id="selectSpecies1" class="form-select-sm"></select> 
+                        <div id="histogram1"></div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <label for="species">Choose species:</label>
+                        <select id="selectSpecies2" class="form-select-sm"></select> 
+                        <div id="histogram2"></div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-depth" role="tabpanel" aria-labelledby="nav-depth-tab">
+                        <label for="species">Choose species:</label>
+                        <select id="selectSpecies3" class="form-select-sm"></select> 
+                        <div id="histogram3"></div>
+                    </div>
+              </div>
+        </div>
+        <div id="histogramText">
+            <div class="card bg-secondary text-warning">
+                <div class="card-body">
+                  <h5 class="card-title">Histogrammic Overview</h5>
+                  <p class="card-text text-white">The histogram is designed to provide an overview of the three penguin species. By choosing between 
+                    body mass, flipper length, beak length, and beak depth, the user can explore either the average 
+                    distribution of a certain body characteristic’s measurements or choose a specific penguin species 
+                    to peruse from the dropdown menu. Here, the x-axis spans from the minimum value to the maximum, not from zero. This is done to for better readability. Hover over a bar to get the exact value.
+                </p>
+                </div>
+              </div>
+        </div>
+
+    </div>
+  
+    <div id="scatterSection">
+        <div id="scatterText">
+            <div class="card bg-secondary text-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Scatterplot comparison</h5>
+                    <p class="card-text text-white">The scatterplot introduces a secondary perspective on the data, 
+                    plotting a comparison of two chosen physical attributes. The three species are also separated 
+                    by colour for a further inter-species exploration of differences between individual penguins. 
+                    The user can choose what attributes are represented on each axis using the dropdown menus. 
+                    For the purpose of graph clarity, the chosen axes extend from the minimum to the maximum 
+                    value within that attribute. Specific data on demand is also available by hovering an individual 
+                    circle on the graph. Also, hover over the species legend to highlight all corresponding datapoints. Overall, the scatterplot opens an avenue to explore differences and 
+                    similarities between penguin species and their body characteristics. Which species has the longest 
+                    flippers but lowest body mass? Explore to find out!</p>
+                    <br>
+                    <label for="#selectButtonY" class="text-white">Select Y Axis</label>
+                    <select id="selectButtonY" class="form-select-sm" aria-label="Default select example"></select>
+                    <br>
+                    <label for="#selectButtonX" class="text-white">Select X Axis</label>
+                    <select id="selectButtonX" class="form-select-sm" aria-label="Default select example"></select>
+                </div>
+              </div>
+        </div>
+        <div id="scatterplot"></div>
+    </div>
+
+    <div id="referencesContainer">
+        <div id="references">
+            <h5>Copyright and licence information</h5>
+            <p>
+                The data used is available by CC-0 license in accordance with the Palmer Station LTER Data Policy 
+                and the LTER Data Access Policy for Type I data. CC-0 states that data are placed in the public domain, 
+                so that others may freely build upon, enhance, and reuse the works for any purposes without restriction 
+                under copyright or database law. More info can be found <a href="https://lternet.edu/data-access-policy/">here</a>.
+            </p>
+            <h5>References</h5>            
+            <p>
+                Pandey P (2020) Palmer Archipelago (Antarctica) penguin data. <a href="https://www.kaggle.com/datasets/parulpandey/palmer-archipelago-antarctica-penguin-data?resource=download">https://www.kaggle.com/datasets/parulpandey/palmer-archipelago-antarctica-penguin-data?resource=download</a> (Accessed 02/04/2022).
+                <br><br>
+                Horst A (2020) palmerpenguins. <a href="https://github.com/allisonhorst/palmerpenguins/blob/master/README.md">https://github.com/allisonhorst/palmerpenguins/blob/master/README.md</a> (Accessed 02/04/2022).
+                <br><br>
+                Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081. <a href="https://doi.org/10.1371/journal.pone.0090081">https://doi.org/10.1371/journal.pone.0090081</a>
+                <br><br>
+                <strong>Adélie penguins:</strong> Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Adélie penguins (Pygoscelis adeliae) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f">https://doi.org/10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f</a> (Accessed 02/04/2022).
+                <br><br>
+                <strong>Gentoo penguins:</strong> Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Gentoo penguin (Pygoscelis papua) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689">https://doi.org/10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689</a> (Accessed 02/04/2022).
+                <br><br>
+                <strong>Chinstrap penguins:</strong> Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Chinstrap penguin (Pygoscelis antarcticus) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 6. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e">https://doi.org/10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e</a> (Accessed 02/04/2022).
+                <br><br>
+            </p>
+            <h5>D3 Resources Used</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Influenced Feature</th>
+                        <th scope="col">Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Histogram</th>
+                        <td><a href="https://d3-graph-gallery.com/graph/histogram_basic.html">https://d3-graph-gallery.com/graph/histogram_basic.html</a> <br>
+                        <a href="https://d3-graph-gallery.com/graph/line_filter.html">https://d3-graph-gallery.com/graph/line_filter.html</a> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Scatterplot</th>
+                        <td><a href="https://d3-graph-gallery.com/graph/scatter_grouped_highlight.html">https://d3-graph-gallery.com/graph/scatter_grouped_highlight.html</a> <br>
+                            <a href="https://d3-graph-gallery.com/graph/scatter_basic.html">https://d3-graph-gallery.com/graph/scatter_basic.html</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Colour by Species</th>
+                        <td><a href="https://d3-graph-gallery.com/graph/scatter_grouped.html">https://d3-graph-gallery.com/graph/scatter_grouped.html</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Dropdown Menu</th>
+                        <td><a href="https://d3-graph-gallery.com/graph/line_select.html">https://d3-graph-gallery.com/graph/line_select.html</a> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Axis Transition/Update</th>
+                        <td><a href="https://d3-graph-gallery.com/graph/line_change_data.html">https://d3-graph-gallery.com/graph/line_change_data.html</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tooltip (after selection)</th>
+                        <td><a href="https://jsfiddle.net/Lntzh7aj/">https://jsfiddle.net/Lntzh7aj/</a> <br>
+                            <a href="https://d3-graph-gallery.com/graph/interactivity_tooltip.html#customContent">https://d3-graph-gallery.com/graph/interactivity_tooltip.html#customContent</a> <br>
+                            <a href="https://stackoverflow.com/questions/26898814/setting-default-selection-of-a-dropdown-menu-with-d3">https://stackoverflow.com/questions/26898814/setting-default-selection-of-a-dropdown-menu-with-d3</a> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Axis Labels</th>
+                        <td><a href="http://www.d3noob.org/2012/12/adding-axis-labels-to-d3js-graph.html">http://www.d3noob.org/2012/12/adding-axis-labels-to-d3js-graph.html</a> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Legend</th>
+                        <td><a href="https://d3-graph-gallery.com/graph/custom_legend.html">https://d3-graph-gallery.com/graph/custom_legend.html</a> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>    
+    
+    <footer>
+        <p>Artwork by @allison_horst, Photograph by Dylan Shaw</p>
+    </footer>
+
+    <script type="module" src="./index.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
